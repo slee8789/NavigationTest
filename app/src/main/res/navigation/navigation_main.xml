@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@+id/navigation_first">
+
+    <fragment
+        android:id="@+id/navigation_first"
+        android:name="com.bnpinnovation.navcontrollertest.FirstFragment"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_second"
+            app:destination="@id/navigation_second" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_second"
+        android:name="com.bnpinnovation.navcontrollertest.SecondFragment"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_third"
+            app:destination="@id/navigation_third" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_third"
+        android:name="com.bnpinnovation.navcontrollertest.ThirdFragment"
+        tools:layout="@layout/fragment_third">
+        <action
+            android:id="@+id/action_first"
+            app:destination="@id/navigation_first"
+            app:popUpTo="@id/action_first"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+</navigation>
